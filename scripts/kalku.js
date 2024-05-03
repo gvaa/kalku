@@ -22,9 +22,22 @@ let divide = function (a, b) {
     return a / b;
 }
 
-let operate = function (operator, operandOne, operandTwo)
+let operate = function (operator, operandOne, operandTwo) {
+    switch (operator) {
+        case "+":
+            return add(operandOne, operandTwo);
+        case "-":
+            return subtract(operandOne, operandTwo);
+        case "*":
+            return multiply(operandOne, operandTwo);
+        case "/":
+            return divide(operandOne, operandTwo);
+        default:
+            return "undefined operator";
+        }
 
-console.log(add(5,9));
-console.log(subtract(5,9));
-console.log(multiply(5,9));
-console.log(divide(5,9));
+}
+
+console.log(operate("+", 5, 9));
+console.log(operate("-", 5, 9));
+console.log(operate("^", 5, 9));
