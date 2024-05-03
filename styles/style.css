@@ -1,0 +1,27 @@
+* {
+    font-family: 'Inter', 'Franklin Gothic Medium', 'Helvetica', 'Arial', sans-serif;
+}
+
+main {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calculator {
+    margin: 50px;
+    padding: 4px;
+    height: 224px;
+    width: 252px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f2937;
+    gap: 4px;
+    flex-wrap: wrap-reverse;
+}
+
+button {
+    height: 40px;
+    width: 60px;
+}
