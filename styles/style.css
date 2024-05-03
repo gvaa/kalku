@@ -22,6 +22,11 @@ main {
 }
 
 button {
+    display: flex;
+    align-items:flex-end;
+    justify-content: right;
     height: 40px;
     width: 60px;
+    font-size: 18px;
+    font-weight: 600;
 }
