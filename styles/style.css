@@ -6,19 +6,7 @@ main {
     display:flex;
     justify-content: center;
     align-items: center;
-}
-
-#calculator {
-    margin: 50px;
-    padding: 4px;
-    height: 224px;
-    width: 252px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1f2937;
-    gap: 4px;
-    flex-wrap: wrap-reverse;
+    flex-direction: column;
 }
 
 button {
@@ -29,4 +17,33 @@ button {
     width: 60px;
     font-size: 18px;
     font-weight: 600;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
 }
+
+#input-screen {
+    margin-top: 50px;
+    padding: 4px;
+    height: 64px;
+    width: 252px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #313244;
+    gap: 4px;
+    flex-wrap: wrap-reverse;
+}
+
+#calculator {
+    margin-bottom: 50px;
+    padding: 4px;
+    height: 224px;
+    width: 252px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #11111b;
+    gap: 4px;
+    flex-wrap: wrap-reverse;
+}
+
