@@ -38,10 +38,14 @@ let operate = function (operator, operandOne, operandTwo) {
 
 }
 
+let inputScreen = document.getElementById("input-display")
+let inputScreenValue = 0;
+let inputValue = "";
 const allBtns = document.querySelectorAll("button");
 
 for (const btn of allBtns) {
     btn.addEventListener('click', e => {
-        console.log(e.target.innerText);
+        inputValue += e.target.innerText;
+        inputScreen.innerText = inputValue;
     });
 }
