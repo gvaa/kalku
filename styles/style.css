@@ -9,36 +9,41 @@ main {
     flex-direction: column;
 }
 
+p {
+    margin: 0;
+}
+
 button {
     display: flex;
     align-items:flex-end;
     justify-content: right;
     height: 40px;
-    width: 60px;
+    width: 56px;
     font-size: 18px;
     font-weight: 600;
     background-color: #1e1e2e;
-    color: #cdd6f4;
+    color: #9399b2;
 }
 
 #input-screen {
+    display: flex;
     margin-top: 50px;
     padding: 4px;
     height: 64px;
-    width: 252px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 236px;
+    font-size: 24px;
+    font-weight: 800;
+    align-items:flex-end;
+    justify-content: right;
     background-color: #313244;
-    gap: 4px;
-    flex-wrap: wrap-reverse;
+    color: #cdd6f4;
 }
 
 #calculator {
     margin-bottom: 50px;
     padding: 4px;
     height: 224px;
-    width: 252px;
+    width: 236px;
     display: flex;
     align-items: center;
     justify-content: center;

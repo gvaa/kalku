@@ -38,6 +38,10 @@ let operate = function (operator, operandOne, operandTwo) {
 
 }
 
-console.log(operate("+", 5, 9));
-console.log(operate("-", 5, 9));
-console.log(operate("^", 5, 9));
+const allBtns = document.querySelectorAll("button");
+
+for (const btn of allBtns) {
+    btn.addEventListener('click', e => {
+        console.log(e.target.innerText);
+    });
+}
