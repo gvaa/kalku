@@ -59,5 +59,3 @@ for (const btn of allBtns) {
         }
     });
 }
-
-// max len 14
