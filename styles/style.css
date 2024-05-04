@@ -37,6 +37,7 @@ button {
     justify-content: right;
     background-color: #313244;
     color: #cdd6f4;
+    /* overflow: hidden; */
 }
 
 #calculator {
@@ -52,3 +53,11 @@ button {
     flex-wrap: wrap-reverse;
 }
 
+.inner {
+    display: flex;
+    border: 1px solid blue;
+    justify-content: right;
+    /* align-items:flex-end; */
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+}

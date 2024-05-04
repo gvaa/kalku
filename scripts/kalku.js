@@ -42,6 +42,7 @@ let inputScreen = document.getElementById("input-display")
 let inputScreenValue = "";
 let inputValue = "";
 let inputScreenLength = 0;
+
 const allBtns = document.querySelectorAll("button");
 
 for (const btn of allBtns) {
@@ -49,13 +50,13 @@ for (const btn of allBtns) {
         inputValue = e.target.innerText;
         if (inputValue === "C") {
             inputScreenValue = "";
-            inputScreen.innerText = inputScreenValue;
+            inputScreen.innerHTML = `<p class="inner">${inputScreenValue}</p>`;
         } else {
             inputScreenValue += inputValue;
-            if (inputScreenValue.length > 14){
-                inputScreenValue = inputScreenValue.slice(1);
-            }
-            inputScreen.innerText = inputScreenValue;
+            // if (inputScreenValue.length > 14){
+            //     inputScreenValue = inputScreenValue.slice(1);
+            // }
+            inputScreen.innerHTML = `<p class="inner">${inputScreenValue}</p>`;
         }
     });
 }
