@@ -39,13 +39,21 @@ let operate = function (operator, operandOne, operandTwo) {
 }
 
 let inputScreen = document.getElementById("input-display")
-let inputScreenValue = 0;
+let inputScreenValue = "";
 let inputValue = "";
 const allBtns = document.querySelectorAll("button");
 
 for (const btn of allBtns) {
     btn.addEventListener('click', e => {
-        inputValue += e.target.innerText;
-        inputScreen.innerText = inputValue;
+        inputValue = e.target.innerText;
+        if (inputValue === "C") {
+            inputScreenValue = "";
+            inputScreen.innerText = inputScreenValue;
+        } else {
+            inputScreenValue += inputValue
+            inputScreen.innerText = inputScreenValue;
+        }
     });
 }
+
+// max len 14
