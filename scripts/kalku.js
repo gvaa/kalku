@@ -77,9 +77,13 @@ let workOperandButton = function (operandButton) {
 let workEqualsButton = function (equalsButton) {
     equalsButton.addEventListener('click', e => {
         // operandValue = e.target.innerText;
-        auxDisplayValue = operandOne + operatorValue + mainDisplayValue + "=";
-        mainDisplayValue = operate(operatorValue, operandOne, mainDisplayValue);
-        populateDisplays(mainDisplayValue, auxDisplayValue);
+        if (operandOne != "" && operandValue != "" && mainDisplayValue != "") {
+            auxDisplayValue = operandOne + operatorValue + mainDisplayValue + "=";
+            mainDisplayValue = operate(operatorValue, operandOne, mainDisplayValue);
+            operandOne = "";
+            operatorValue = "";
+            populateDisplays(mainDisplayValue, auxDisplayValue);
+        }
     });
 }
 
@@ -105,21 +109,3 @@ operatorButtons.forEach(workOperatorButton);
 operandButtons.forEach(workOperandButton);
 workEqualsButton(equalsButton);
 workCleanButton(clearButton);
-
-// for (const btn of operandButtons) {
-//     btn.addEventListener('click', e => {
-//         inputValue = e.target.innerText;
-//         if (inputValue === "C") {
-//             mainDisplayValue = "";
-//             mainDisplay.innerHTML = `<p class="inner">${mainDisplayValue}</p>`;
-//         } else if (inputValue === "C") {
-
-//         }
-        
-        
-//             else {
-//                 mainDisplayValue += inputValue;
-//             mainDisplay.innerHTML = `<p class="inner">${mainDisplayValue}</p>`;
-//         }
-//     });
-// }
