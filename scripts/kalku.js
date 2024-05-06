@@ -2,7 +2,6 @@
 
 // https://en.wikipedia.org/wiki/Kalku
 
-// let operator;
 let operandOne;
 let operandTwo;
 let mainDisplay = document.getElementById("main-display")
@@ -13,7 +12,6 @@ let inputValue = "";
 let operatorValue = "";
 let operandValue = "";
 let inputScreenLength = 0;
-
 
 let add = function (a, b) {
     return parseFloat(a) + parseFloat(b);
@@ -53,6 +51,14 @@ let populateDisplays = function (mainDisplayValue, auxDisplayValue) {
 
 let workOperatorButton = function (operatorButton) {
     operatorButton.addEventListener('click', e => {
+        
+        if (operandOne != "" && operatorValue != "" && mainDisplayValue != "") {
+            auxDisplayValue = operandOne + operatorValue + mainDisplayValue;
+            mainDisplayValue = operate(operatorValue, operandOne, mainDisplayValue);
+            operandOne = "";
+            operatorValue = "";            
+        }
+
         operatorValue = e.target.innerText;
         if (mainDisplayValue != "") {
             operandOne = mainDisplayValue;
@@ -77,7 +83,7 @@ let workOperandButton = function (operandButton) {
 let workEqualsButton = function (equalsButton) {
     equalsButton.addEventListener('click', e => {
         // operandValue = e.target.innerText;
-        if (operandOne != "" && operandValue != "" && mainDisplayValue != "") {
+        if (operandOne != "" && operatorValue != "" && mainDisplayValue != "") {
             auxDisplayValue = operandOne + operatorValue + mainDisplayValue + "=";
             mainDisplayValue = operate(operatorValue, operandOne, mainDisplayValue);
             operandOne = "";
@@ -100,6 +106,7 @@ let workCleanButton = function (cleanButton) {
     });
 }
 
+// selecting buttons and adding respective listeners
 const operandButtons = document.querySelectorAll(".operand");
 const operatorButtons = document.querySelectorAll(".operator");
 const equalsButton = document.querySelector("#equals");
