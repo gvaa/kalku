@@ -18,31 +18,30 @@ let add = function (a, b) {
 }
 
 let subtract = function (a, b) {
-    if (checkDecimals(a) > checkDecimals(b)) {
-        return (a - b).toFixed(checkDecimals(a));
-    } else {
-        return (a - b).toFixed(checkDecimals(b));
-    }
-    
-
-    return a - b;
+    // if (checkDecimals(a) > checkDecimals(b)) {
+    //     return (a - b).toFixed(checkDecimals(a));
+    // } else {
+    //     return (a - b).toFixed(checkDecimals(b));
+    // }   
+    return (a - b).toFixed(14) * 1;
 }
 
 let multiply = function (a, b) {
-    return a * b;
+    // return (a * b).toFixed(15);
+    return (a * b).toFixed(14) * 1;
 }
 
 let divide = function (a, b) {
-    return a / b;
+    return (a / b).toFixed(14) * 1;
 }
 
-let checkDecimals = function (num) {
-    if (Number.isInteger(+num)) {
-        return 0;
-    } else {
-        return num.toString().split('.')[1].length;
-    }
-}
+// let checkDecimals = function (num) {
+//     if (Number.isInteger(+num)) {
+//         return 0;
+//     } else {
+//         return num.toString().split('.')[1].length;
+//     }
+// }
 
 let operate = function (operator, operandOne, operandTwo) {
     switch (operator) {

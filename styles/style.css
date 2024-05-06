@@ -33,8 +33,12 @@ button {
     padding: 4px;
     height: 32px;
     width: 236px;
-    font-size: 14px;
-    font-weight: 400;
+    font-family: 'DSEG7 Modern';
+    /* font-family: 'DSEG14 Classic'; */
+    /* font-family: 'Orbitron'; */
+    /* font-size: 14px; */
+    font-size: 12px;
+    /* font-weight: 400; */
     align-items:flex-end;
     justify-content: right;
     background-color: #37384a;
@@ -47,13 +51,23 @@ button {
     padding: 4px;
     height: 56px;
     width: 236px;
+    font-family: 'DSEG7 Modern';
+    /* font-family: 'DSEG14 Classic'; */
+    /* font-family: 'Orbitron'; */
     font-size: 24px;
-    font-weight: 800;
+    /* font-weight: 800; */
+    font-weight: bold;
     align-items:flex-end;
     justify-content: right;
-    background-color: #313244;
-    color: #cdd6f4;
+    background-color: #7d8c73;
+    color: #11111b;
+    text-shadow: 3px 2px 0px rgba(0,0,0,.2);
+    /* background-color: #313244; */
     /* overflow: hidden; */
+    box-shadow:
+        inset 1px 1px 7px 0px #050505,
+        0px 0px 4px 2px #000,
+        0px 0px 4px 2px #777;
 }
 
 #calculator {
