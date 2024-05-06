@@ -81,13 +81,13 @@ let workEqualsButton = function (equalsButton) {
 let workCleanButton = function (cleanButton) {
     cleanButton.addEventListener('click', () => {
         // operandValue = e.target.innerText;
-        mainDisplayValue = "0";
-        auxDisplayValue = "0";
+        mainDisplayValue = "";
+        auxDisplayValue = "";
         inputValue = "";
         operatorValue = "";
         operandValue = "";
         operandOne = "";
-        populateDisplays(mainDisplayValue, auxDisplayValue);
+        populateDisplays(0, "");
     });
 }
 
