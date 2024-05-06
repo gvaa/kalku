@@ -4,4 +4,4 @@ Implementation in process - with the guidance by The Odin Project.
 
 ## Live Demo
 
-Here: [].
+You can access the project [here](https://gvaa.github.io/kalku/).
