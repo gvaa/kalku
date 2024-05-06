@@ -122,6 +122,15 @@ let workDeleteButton = function (deleteButton) {
     });
 }
 
+let workPlusminusButton = function (plusminusButton) {
+    plusminusButton.addEventListener('click', () => {
+
+    // console.log(deleteButton)
+        mainDisplayValue = "-" + mainDisplayValue;
+        populateDisplays(mainDisplayValue, auxDisplayValue);
+    });
+}
+
 // selecting buttons and adding respective listeners
 const operandButtons = document.querySelectorAll(".operand");
 const operatorButtons = document.querySelectorAll(".operator");
@@ -135,3 +144,4 @@ operandButtons.forEach(workOperandButton);
 workEqualsButton(equalsButton);
 workCleanButton(clearButton);
 workDeleteButton(document.querySelector("#delete"));
+workPlusminusButton(document.querySelector("#plus-minus"));
