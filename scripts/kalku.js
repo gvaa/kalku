@@ -51,7 +51,8 @@ let operate = function (operator, operandOne, operandTwo) {
             return subtract(operandOne, operandTwo);
         case "*":
             return multiply(operandOne, operandTwo);
-        case "/":
+        // case "÷":
+        case "/": 
             return divide(operandOne, operandTwo);
         default:
             return "undefined operator";
