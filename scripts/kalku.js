@@ -2,9 +2,18 @@
 
 // https://en.wikipedia.org/wiki/Kalku
 
-let operator;
+// let operator;
 let operandOne;
 let operandTwo;
+let mainDisplay = document.getElementById("main-display")
+let auxDisplay = document.getElementById("aux-display")
+let mainDisplayValue = "";
+let auxDisplayValue = "";
+let inputValue = "";
+let operatorValue = "";
+let operandValue = "";
+let inputScreenLength = 0;
+
 
 let add = function (a, b) {
     return a + b;
@@ -35,28 +44,77 @@ let operate = function (operator, operandOne, operandTwo) {
         default:
             return "undefined operator";
         }
-
 }
 
-let inputScreen = document.getElementById("input-display")
-let inputScreenValue = "";
-let inputValue = "";
-let inputScreenLength = 0;
+let populateDisplays = function (mainDisplayValue, auxDisplayValue) {
+    mainDisplay.innerHTML = `<p class="inner">${mainDisplayValue}</p>`;
+    auxDisplay.innerHTML = `<p class="inner">${auxDisplayValue}</p>`;
+}
 
-const allBtns = document.querySelectorAll("button");
-
-for (const btn of allBtns) {
-    btn.addEventListener('click', e => {
-        inputValue = e.target.innerText;
-        if (inputValue === "C") {
-            inputScreenValue = "";
-            inputScreen.innerHTML = `<p class="inner">${inputScreenValue}</p>`;
-        } else {
-            inputScreenValue += inputValue;
-            // if (inputScreenValue.length > 14){
-            //     inputScreenValue = inputScreenValue.slice(1);
-            // }
-            inputScreen.innerHTML = `<p class="inner">${inputScreenValue}</p>`;
-        }
+let workOperatorButton = function (operatorButton) {
+    operatorButton.addEventListener('click', e => {
+        operatorValue = e.target.innerText;
+        operandOne = mainDisplayValue;
+        auxDisplayValue = mainDisplayValue + operatorValue;
+        mainDisplayValue = "";
+        populateDisplays(mainDisplayValue, auxDisplayValue);
     });
 }
+
+let workOperandButton = function (operandButton) {
+    operandButton.addEventListener('click', e => {
+        operandValue = e.target.innerText;
+        mainDisplayValue += operandValue;
+        populateDisplays(mainDisplayValue, auxDisplayValue);
+    });
+}
+
+let workEqualsButton = function (equalsButton) {
+    equalsButton.addEventListener('click', e => {
+        // operandValue = e.target.innerText;
+        mainDisplayValue = operate(operatorValue, operandOne, mainDisplayValue);
+        auxDisplayValue = "";
+        populateDisplays(mainDisplayValue, auxDisplayValue);
+    });
+}
+
+let workCleanButton = function (cleanButton) {
+    cleanButton.addEventListener('click', () => {
+        // operandValue = e.target.innerText;
+        mainDisplayValue = "0";
+        auxDisplayValue = "0";
+        inputValue = "";
+        operatorValue = "";
+        operandValue = "";
+        operandOne = "";
+        populateDisplays(mainDisplayValue, auxDisplayValue);
+    });
+}
+
+const operandButtons = document.querySelectorAll(".operand");
+const operatorButtons = document.querySelectorAll(".operator");
+const equalsButton = document.querySelector(".equals");
+const clearButton = document.querySelector(".clear");
+
+operatorButtons.forEach(workOperatorButton);
+operandButtons.forEach(workOperandButton);
+workEqualsButton(equalsButton);
+workCleanButton(clearButton);
+
+// for (const btn of operandButtons) {
+//     btn.addEventListener('click', e => {
+//         inputValue = e.target.innerText;
+//         if (inputValue === "C") {
+//             mainDisplayValue = "";
+//             mainDisplay.innerHTML = `<p class="inner">${mainDisplayValue}</p>`;
+//         } else if (inputValue === "C") {
+
+//         }
+        
+        
+//             else {
+//                 mainDisplayValue += inputValue;
+//             mainDisplay.innerHTML = `<p class="inner">${mainDisplayValue}</p>`;
+//         }
+//     });
+// }
