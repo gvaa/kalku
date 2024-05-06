@@ -113,13 +113,25 @@ let workCleanButton = function (cleanButton) {
     });
 }
 
+let workDeleteButton = function (deleteButton) {
+    deleteButton.addEventListener('click', () => {
+
+    // console.log(deleteButton)
+        mainDisplayValue = mainDisplayValue.slice(0,-1);
+        populateDisplays(mainDisplayValue, auxDisplayValue);
+    });
+}
+
 // selecting buttons and adding respective listeners
 const operandButtons = document.querySelectorAll(".operand");
 const operatorButtons = document.querySelectorAll(".operator");
 const equalsButton = document.querySelector("#equals");
 const clearButton = document.querySelector("#clear");
+// const deleteButton = document.querySelector("#delete");
+
 
 operatorButtons.forEach(workOperatorButton);
 operandButtons.forEach(workOperandButton);
 workEqualsButton(equalsButton);
 workCleanButton(clearButton);
+workDeleteButton(document.querySelector("#delete"));
