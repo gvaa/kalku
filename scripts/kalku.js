@@ -94,11 +94,12 @@ let workOperatorButton = function (operatorButton) {
 let workOperandButton = function (operandButton) {
     operandButton.addEventListener('click', e => {
         operandValue = e.target.innerText;
-        console.log(operandValue);
         if (mainDisplayValue == "0") {
             mainDisplayValue = "";
         }
-        mainDisplayValue += operandValue;
+        if (operandValue != "." || !mainDisplayValue.includes(".")) {
+            mainDisplayValue += operandValue;
+        }
         populateDisplays(mainDisplayValue, auxDisplayValue);
     });
 }
@@ -132,8 +133,9 @@ let workCleanButton = function (cleanButton) {
 let workDeleteButton = function (deleteButton) {
     deleteButton.addEventListener('click', () => {
 
-    // console.log(deleteButton)
-        mainDisplayValue = mainDisplayValue.slice(0,-1);
+        console.log(mainDisplayValue);
+
+        mainDisplayValue = mainDisplayValue.toString().slice(0,-1);
         populateDisplays(mainDisplayValue, auxDisplayValue);
     });
 }
