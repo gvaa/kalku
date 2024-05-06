@@ -45,6 +45,9 @@ let operate = function (operator, operandOne, operandTwo) {
 }
 
 let populateDisplays = function (mainDisplayValue, auxDisplayValue) {
+    // if (mainDisplayValue.slice(0,1) == 0) {
+    //     mainDisplayValue = mainDisplayValue.slice(1,);
+    // }
     mainDisplay.innerHTML = `<p class="inner">${mainDisplayValue}</p>`;
     auxDisplay.innerHTML = `<p class="inner">${auxDisplayValue}</p>`;
 }
@@ -76,6 +79,9 @@ let workOperatorButton = function (operatorButton) {
 let workOperandButton = function (operandButton) {
     operandButton.addEventListener('click', e => {
         operandValue = e.target.innerText;
+        if (mainDisplayValue == "0") {
+            mainDisplayValue = "";
+        }
         mainDisplayValue += operandValue;
         populateDisplays(mainDisplayValue, auxDisplayValue);
     });
