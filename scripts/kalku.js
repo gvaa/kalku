@@ -16,7 +16,7 @@ let inputScreenLength = 0;
 
 
 let add = function (a, b) {
-    return a + b;
+    return parseFloat(a) + parseFloat(b);
 }
 
 let subtract = function (a, b) {
@@ -54,8 +54,13 @@ let populateDisplays = function (mainDisplayValue, auxDisplayValue) {
 let workOperatorButton = function (operatorButton) {
     operatorButton.addEventListener('click', e => {
         operatorValue = e.target.innerText;
-        operandOne = mainDisplayValue;
-        auxDisplayValue = mainDisplayValue + operatorValue;
+        if (mainDisplayValue != "") {
+            operandOne = mainDisplayValue;
+            auxDisplayValue = mainDisplayValue + operatorValue;
+        } else {
+            auxDisplayValue = auxDisplayValue.slice(0,-1) + operatorValue;
+        }
+        // auxDisplayValue = mainDisplayValue + operatorValue;
         mainDisplayValue = "";
         populateDisplays(mainDisplayValue, auxDisplayValue);
     });
@@ -72,8 +77,8 @@ let workOperandButton = function (operandButton) {
 let workEqualsButton = function (equalsButton) {
     equalsButton.addEventListener('click', e => {
         // operandValue = e.target.innerText;
+        auxDisplayValue = operandOne + operatorValue + mainDisplayValue + "=";
         mainDisplayValue = operate(operatorValue, operandOne, mainDisplayValue);
-        auxDisplayValue = "";
         populateDisplays(mainDisplayValue, auxDisplayValue);
     });
 }
@@ -93,8 +98,8 @@ let workCleanButton = function (cleanButton) {
 
 const operandButtons = document.querySelectorAll(".operand");
 const operatorButtons = document.querySelectorAll(".operator");
-const equalsButton = document.querySelector(".equals");
-const clearButton = document.querySelector(".clear");
+const equalsButton = document.querySelector("#equals");
+const clearButton = document.querySelector("#clear");
 
 operatorButtons.forEach(workOperatorButton);
 operandButtons.forEach(workOperandButton);
