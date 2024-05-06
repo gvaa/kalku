@@ -53,12 +53,13 @@ let workOperatorButton = function (operatorButton) {
     operatorButton.addEventListener('click', e => {
         
         if (operandOne != "" && operatorValue != "" && mainDisplayValue != "") {
-            auxDisplayValue = operandOne + operatorValue + mainDisplayValue;
-            mainDisplayValue = operate(operatorValue, operandOne, mainDisplayValue);
-            operandOne = "";
-            operatorValue = "";            
+            operandOne = operate(operatorValue, operandOne, mainDisplayValue);
+            auxDisplayValue = operandOne + e.target.innerText;
+            // operandOne = "";
+            // operatorValue = "";     
+            mainDisplayValue = "";       
+            populateDisplays(mainDisplayValue, auxDisplayValue);
         }
-
         operatorValue = e.target.innerText;
         if (mainDisplayValue != "") {
             operandOne = mainDisplayValue;
