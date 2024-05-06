@@ -18,6 +18,13 @@ let add = function (a, b) {
 }
 
 let subtract = function (a, b) {
+    if (checkDecimals(a) > checkDecimals(b)) {
+        return (a - b).toFixed(checkDecimals(a));
+    } else {
+        return (a - b).toFixed(checkDecimals(b));
+    }
+    
+
     return a - b;
 }
 
@@ -27,6 +34,14 @@ let multiply = function (a, b) {
 
 let divide = function (a, b) {
     return a / b;
+}
+
+let checkDecimals = function (num) {
+    if (Number.isInteger(+num)) {
+        return 0;
+    } else {
+        return num.toString().split('.')[1].length;
+    }
 }
 
 let operate = function (operator, operandOne, operandTwo) {
@@ -79,6 +94,7 @@ let workOperatorButton = function (operatorButton) {
 let workOperandButton = function (operandButton) {
     operandButton.addEventListener('click', e => {
         operandValue = e.target.innerText;
+        console.log(operandValue);
         if (mainDisplayValue == "0") {
             mainDisplayValue = "";
         }
