@@ -21,8 +21,8 @@ button {
     display: flex;
     align-items:flex-end;
     justify-content: right;
-    height: 40px;
-    width: 56px;
+    height: 54px;
+    width: 75px;
     font-size: 18px;
     font-weight: 600;
     background-color: #1e1e2e;
@@ -106,14 +106,14 @@ button {
 
 #calculator {
     margin-bottom: 50px;
-    padding: 4px;
-    height: 224px;
-    width: 236px;
+    padding: 5px;
+    height: 290px;
+    width: 315px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #313244;
-    gap: 4px;
+    gap: 5px;
     flex-wrap: wrap-reverse;
 
     box-shadow:
@@ -124,7 +124,7 @@ button {
 
 .inner {
     display: flex;
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
     justify-content: right;
     /* align-items:flex-end; */
     overflow: hidden;
