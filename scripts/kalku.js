@@ -45,8 +45,10 @@ let operate = function (operator, operandOne, operandTwo) {
 }
 
 let populateDisplays = function (mainDisplayValue, auxDisplayValue) {
-    if (String(mainDisplayValue).length > 10) {
+    if (String(mainDisplayValue).length > 11) {
         // need to implement rounding if e has more than three digits
+        mainDisplayValue = Number(mainDisplayValue).toExponential(5);
+    } else if (String(mainDisplayValue).length > 10 && !String(mainDisplayValue).includes("-")) {
         mainDisplayValue = Number(mainDisplayValue).toExponential(5);
     }
     mainDisplay.innerHTML = `<p class="inner">${mainDisplayValue}</p>`;
