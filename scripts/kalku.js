@@ -18,15 +18,15 @@ let add = function (a, b) {
 }
 
 let subtract = function (a, b) {
-    return (a - b).toFixed(14) * 1;
+    return (a - b).toFixed(12) * 1;
 }
 
 let multiply = function (a, b) {
-    return (a * b).toFixed(14) * 1;
+    return (a * b).toFixed(12) * 1;
 }
 
 let divide = function (a, b) {
-    return (a / b).toFixed(14) * 1;
+    return (a / b).toFixed(12) * 1;
 }
 
 let operate = function (operator, operandOne, operandTwo) {
