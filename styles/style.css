@@ -25,7 +25,8 @@ p {
     height: 30px;
     width: 315px;
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
+    align-items: baseline;
     background-color: #1e1e2e;
     box-shadow:
     inset 1px 1px 7px 0px #050505,
@@ -33,7 +34,13 @@ p {
     0px 0px 4px 2px #777;
 }
 
-.name {
+#logo {
+    width: 16px;
+    height: 16px;
+    
+}
+
+#name {
     font-size: 18px;
     font-weight: bold;
     display: flex;
