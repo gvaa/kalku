@@ -142,9 +142,13 @@ let workDeleteButton = function (deleteButton) {
 
 let workPlusminusButton = function (plusminusButton) {
     plusminusButton.addEventListener('click', () => {
-
-    // console.log(deleteButton)
-        mainDisplayValue = "-" + mainDisplayValue;
+    
+    console.log(mainDisplayValue.slice(0,1))
+        if (mainDisplayValue.slice(0,1) === "-") {
+            mainDisplayValue = mainDisplayValue.slice(1,);
+        } else {
+            mainDisplayValue = "-" + mainDisplayValue;
+        }
         populateDisplays(mainDisplayValue, auxDisplayValue);
     });
 }

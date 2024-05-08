@@ -19,8 +19,6 @@ p {
     margin: 0;
 }
 
-
-
 #top {
     margin-top: 50px;
     margin-bottom: 5px;
@@ -117,9 +115,10 @@ button {
     font-weight: 600;
     /* background-color: #1e1e2e; */
     background-color: #1e1e2e;
-    color: #9399b2;
+    color: #a6adc8;
     border-width: 1px;
     border-radius: 5px;
+    border-color: #6c7086;
 }
 
 #calculator {
@@ -148,4 +147,12 @@ button {
     /* align-items:flex-end; */
     overflow: hidden;
     /* text-overflow: ellipsis; */
+}
+
+.operator, #equals, #plus-minus, #percent {
+    color: #a6e3a1;
+}
+
+#delete, #clear {
+    color: #eba0ac;
 }
