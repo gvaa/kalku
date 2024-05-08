@@ -26,7 +26,7 @@ let multiply = function (a, b) {
 }
 
 let divide = function (a, b) {
-    return (a / b).toFixed(12   ) * 1;
+    return (a / b).toFixed(12) * 1;
 }
 
 let operate = function (operator, operandOne, operandTwo) {
@@ -51,9 +51,7 @@ let populateDisplays = function (mainDisplayValue, auxDisplayValue) {
     } else if (String(mainDisplayValue).length > 10 && !String(mainDisplayValue).includes("-")) {
         mainDisplayValue = Number(mainDisplayValue).toExponential(5);
     }
-    // mainDisplay.innerHTML = `<p class="inner">${mainDisplayValue}</p>`;
     mainDisplay.innerText = mainDisplayValue;
-    // auxDisplay.innerHTML = `<p class="inner">${auxDisplayValue}</p>`;
     auxDisplay.innerText = auxDisplayValue;
 }
 
@@ -156,11 +154,9 @@ let workPercentButton = function (percentButton) {
             mainDisplayValue = operate("*", 0.01, mainDisplayValue);
         } else if (auxDisplayValue.slice(-1) == "+" || auxDisplayValue.slice(-1) == "-") {
             mainDisplayValue = operate("*", auxDisplayValue.slice(0,-1)*0.01, mainDisplayValue);
-            // auxDisplayValue
         } else {
-            auxDisplayValue = operate("*", auxDisplayValue.slice(0,-1)*0.01, mainDisplayValue);
+            auxDisplayValue = operate(auxDisplayValue.slice(-1), auxDisplayValue.slice(0,-1), mainDisplayValue*0.01);
             mainDisplayValue = "";
-            // auxDisplayValue += mainDisplayValue + "%"; 
         }
         populateDisplays(mainDisplayValue, auxDisplayValue);
     });
