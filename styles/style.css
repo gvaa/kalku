@@ -61,23 +61,25 @@ p {
 }
 
 #aux-display {
+    position: relative;
     display: flex;
     padding: 10px 5px;
     height: 26px;
     width: 315px;
-    text-shadow: 2px 1px 0px rgba(0,0,0,.2);
+
     font-size: 17px;
     align-items:flex-end;
     justify-content: right;
 }
 
 #main-display {
+    position: relative;
     display: flex;
     margin-bottom: 5px;
     padding: 10px 5px;
     height: 50px;
     width: 315px;
-    text-shadow: 3px 2px 0px rgba(0,0,0,.2);
+
     font-size: 35px;
     align-items:flex-end;
     justify-content: right;
@@ -117,6 +119,17 @@ button {
     display: flex;
     justify-content: right;
     overflow: hidden;
+    text-shadow: 2px 1px 0px rgba(0,0,0,.2);
+}
+
+.inner-back {
+    position: absolute;
+    bottom: 9px;
+    right: 3px;
+    display: flex;
+    justify-content: right;
+    overflow: hidden;
+    color: hsla(240, 22%, 9%, 0.05);
 }
 
 .operator, #equals, #plus-minus, #percent {

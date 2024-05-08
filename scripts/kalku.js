@@ -4,8 +4,8 @@
 
 let operandOne;
 let operandTwo;
-let mainDisplay = document.getElementById("main-display")
-let auxDisplay = document.getElementById("aux-display")
+let mainDisplay = document.getElementById("main-display-digits")
+let auxDisplay = document.getElementById("aux-display-digits")
 let mainDisplayValue = "0";
 let auxDisplayValue = "";
 let inputValue = "";
@@ -51,8 +51,10 @@ let populateDisplays = function (mainDisplayValue, auxDisplayValue) {
     } else if (String(mainDisplayValue).length > 10 && !String(mainDisplayValue).includes("-")) {
         mainDisplayValue = Number(mainDisplayValue).toExponential(5);
     }
-    mainDisplay.innerHTML = `<p class="inner">${mainDisplayValue}</p>`;
-    auxDisplay.innerHTML = `<p class="inner">${auxDisplayValue}</p>`;
+    // mainDisplay.innerHTML = `<p class="inner">${mainDisplayValue}</p>`;
+    mainDisplay.innerHTML = mainDisplayValue;
+    // auxDisplay.innerHTML = `<p class="inner">${auxDisplayValue}</p>`;
+    auxDisplay.innerHTML = auxDisplayValue;
 }
 
 let workOperatorButton = function (operatorButton) {
