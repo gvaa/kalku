@@ -98,7 +98,9 @@ let workOperandButton = function (operandButton) {
             mainDisplayValue = "";
         }
         if (operandValue != "." || !mainDisplayValue.includes(".")) {
-            mainDisplayValue += operandValue;
+            if (!(mainDisplayValue.length >= 10)) {
+                mainDisplayValue += operandValue;
+            } 
         }
         populateDisplays(mainDisplayValue, auxDisplayValue);
     });
@@ -142,8 +144,6 @@ let workDeleteButton = function (deleteButton) {
 
 let workPlusminusButton = function (plusminusButton) {
     plusminusButton.addEventListener('click', () => {
-    
-    console.log(mainDisplayValue.slice(0,1))
         if (mainDisplayValue.slice(0,1) === "-") {
             mainDisplayValue = mainDisplayValue.slice(1,);
         } else {
