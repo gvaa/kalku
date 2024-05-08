@@ -11,6 +11,8 @@ KalkU is a calculator app made with the guidance by The Odin Project (Project: C
 ## Live Demo
 You can access the project [here](https://gvaa.github.io/kalku/).
 
+![Peek 2024-05-08 15-45](https://github.com/gvaa/kalku/assets/109627508/fe6577f3-9c23-4cf0-9ecf-ae197147e081)
+
 ## Credits
 - Idea by [The Odin Project](https://www.theodinproject.com/) (Project: Calculator)
 - Colors by [catppuccin](https://catppuccin.com/)
