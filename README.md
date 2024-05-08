@@ -1,6 +1,6 @@
 # KalkU - a (very) simple calculator
 
-KalkU is a calculator app made with the guidance by The Odin Project (Project: Calculator).
+KalkU is a calculator app made with the guidance from The Odin Project (Project: Calculator).
 
 ## Features
 - All standard operations (+, -, / and *), percentage and plus-minus buttons
@@ -11,10 +11,12 @@ KalkU is a calculator app made with the guidance by The Odin Project (Project: C
 ## Live Demo
 You can access the project [here](https://gvaa.github.io/kalku/).
 
-![Peek 2024-05-08 15-45](https://github.com/gvaa/kalku/assets/109627508/fe6577f3-9c23-4cf0-9ecf-ae197147e081)
+![Peek 2024-05-09 00-41b](https://github.com/gvaa/kalku/assets/109627508/9b73ef71-b501-4cf1-bbed-8bc4c692d4bb)
 
 ## Credits
 - Idea by [The Odin Project](https://www.theodinproject.com/) (Project: Calculator)
 - Colors by [catppuccin](https://catppuccin.com/)
 - Display font by [keshikan](https://github.com/keshikan/DSEG)
-- Other fonts by [Google](https://fonts.google.com/) ([Orbitron](https://fonts.google.com/specimen/Orbitron) for buttons and [Leckerli One](https://fonts.google.com/specimen/Leckerli+One) for icon)
+- Other fonts by [Google](https://fonts.google.com/) ([Orbitron](https://fonts.google.com/specimen/Orbitron) for the buttons and [Leckerli One](https://fonts.google.com/specimen/Leckerli+One) for the icon)
+
+
