@@ -23,7 +23,7 @@ button {
     justify-content: right;
     height: 54px;
     width: 75px;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
     background-color: #1e1e2e;
     color: #9399b2;
@@ -88,15 +88,17 @@ button {
 
 #main-display {
     display: flex;
-    padding: 10px 4px;
+    margin-bottom: 5px;
+    padding: 10px 5px;
     height: 50px;
-    width: 236px;
+    width: 315px;
     text-shadow: 3px 2px 0px rgba(0,0,0,.2);
     /* font-family: 'DSEG7'; */
     /* font-family: 'DSEG7 Modern'; */
     /* font-family: 'DSEG14 Classic'; */
     /* font-family: 'Orbitron'; */
-    font-size: 24px;
+    /* font-size: 27px; */
+    font-size: 35px;
     /* font-weight: 800; */
     /* font-weight: bold; */
     align-items:flex-end;
