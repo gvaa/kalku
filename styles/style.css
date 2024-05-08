@@ -3,9 +3,10 @@
 @font-face {font-family: DSEG14; src: url('../fonts/DSEG14Classic-Bold.ttf');}
 /* @font-face {font-family: DSEG7; src: url('../fonts/DSEG7Modern-Bold.ttf');} */
 
-body, button {
+body, button, a {
     font-family: 'Orbitron', 'Franklin Gothic Medium', 'Helvetica', 'Arial', sans-serif;
     background-color: #1e1e2e;
+    color: #a6adc8;
 }
 
 main {
@@ -20,7 +21,7 @@ p {
 }
 
 #top {
-    margin-top: 50px;
+    margin-top: 120px;
     margin-bottom: 5px;
     padding: 5px;
     height: 30px;
@@ -29,7 +30,7 @@ p {
     /* align-items: center; */
     justify-content: right;
     background-color: #1e1e2e;
-    color: #9399b2;
+
     /* text-shadow: 1px 1px 0px rgba(227, 224, 224, 0.2); */
 
     /* gap: 4px; */
@@ -115,14 +116,14 @@ button {
     font-weight: 600;
     /* background-color: #1e1e2e; */
     background-color: #1e1e2e;
-    color: #a6adc8;
+    /* color: #a6adc8; */
     border-width: 1px;
     border-radius: 5px;
     border-color: #6c7086;
 }
 
 #calculator {
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     padding: 5px;
     height: 290px;
     width: 315px;
@@ -142,7 +143,7 @@ button {
 
 .inner {
     display: flex;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     justify-content: right;
     /* align-items:flex-end; */
     overflow: hidden;
@@ -155,4 +156,16 @@ button {
 
 #delete, #clear {
     color: #eba0ac;
+}
+
+a {
+    text-decoration: none;
+}
+
+footer {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    font-size: 8px;
+    color: #a6e3a1;
+    text-align: center;
 }

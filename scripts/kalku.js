@@ -65,7 +65,8 @@ let populateDisplays = function (mainDisplayValue, auxDisplayValue) {
     // }
     console.log(String(mainDisplayValue).length);
     if (String(mainDisplayValue).length > 10) {
-        mainDisplayValue = mainDisplayValue.toExponential(5);
+        // need to implement rounding if e has more than three digits
+        mainDisplayValue = Number(mainDisplayValue).toExponential(5);
     }
     mainDisplay.innerHTML = `<p class="inner">${mainDisplayValue}</p>`;
     auxDisplay.innerHTML = `<p class="inner">${auxDisplayValue}</p>`;
@@ -165,8 +166,8 @@ let workDeleteButton = function (deleteButton) {
 
 let workPlusminusButton = function (plusminusButton) {
     plusminusButton.addEventListener('click', () => {
-        if (mainDisplayValue.slice(0,1) === "-") {
-            mainDisplayValue = mainDisplayValue.slice(1,);
+        if (String(mainDisplayValue).slice(0,1) === "-") {
+            mainDisplayValue = String(mainDisplayValue).slice(1,);
         } else {
             mainDisplayValue = "-" + mainDisplayValue;
         }
