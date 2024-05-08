@@ -115,7 +115,7 @@ let workDotButton = function (dotButton) {
         //     mainDisplayValue = ".";
         //     populateDisplays(mainDisplayValue, auxDisplayValue);
         // }
-        if (!mainDisplayValue.includes(".")) {
+        if (!String(mainDisplayValue).includes(".")) {
             mainDisplayValue += "."; 
         }
         console.log(mainDisplayValue)
