@@ -52,9 +52,9 @@ let populateDisplays = function (mainDisplayValue, auxDisplayValue) {
         mainDisplayValue = Number(mainDisplayValue).toExponential(5);
     }
     // mainDisplay.innerHTML = `<p class="inner">${mainDisplayValue}</p>`;
-    mainDisplay.innerHTML = mainDisplayValue;
+    mainDisplay.innerText = mainDisplayValue;
     // auxDisplay.innerHTML = `<p class="inner">${auxDisplayValue}</p>`;
-    auxDisplay.innerHTML = auxDisplayValue;
+    auxDisplay.innerText = auxDisplayValue;
 }
 
 let workOperatorButton = function (operatorButton) {
@@ -96,16 +96,20 @@ let workOperandButton = function (operandButton) {
 }
 
 let workDotButton = function (dotButton) {
-    dotButton.addEventListener('click', e => {
-        if (!String(mainDisplayValue).includes(".")) {
+    dotButton.addEventListener('click', () => {
+        console.log(mainDisplayValue)
+        if (mainDisplayValue == "") {
+            mainDisplayValue = "0."
+        } else if (!String(mainDisplayValue).includes(".")) {
             mainDisplayValue += "."; 
         }
+        console.log(mainDisplayValue);
         populateDisplays(mainDisplayValue, auxDisplayValue);
     });
 }
 
 let workEqualsButton = function (equalsButton) {
-    equalsButton.addEventListener('click', e => {
+    equalsButton.addEventListener('click', () => {
         if (operandOne != "" && operatorValue != "" && mainDisplayValue != "") {
             auxDisplayValue = operandOne + operatorValue + mainDisplayValue + "=";
             mainDisplayValue = operate(operatorValue, operandOne, mainDisplayValue);
