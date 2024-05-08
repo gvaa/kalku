@@ -6,7 +6,7 @@ let operandOne;
 let operandTwo;
 let mainDisplay = document.getElementById("main-display")
 let auxDisplay = document.getElementById("aux-display")
-let mainDisplayValue = "";
+let mainDisplayValue = "0";
 let auxDisplayValue = "";
 let inputValue = "";
 let operatorValue = "";
@@ -98,10 +98,27 @@ let workOperandButton = function (operandButton) {
             mainDisplayValue = "";
         }
         if (operandValue != "." || !mainDisplayValue.includes(".")) {
-            if (!(mainDisplayValue.length >= 10)) {
+            if (!(mainDisplayValue.length >= 11) && mainDisplayValue.includes(".")) {
+                mainDisplayValue += operandValue;
+            } else if (!(mainDisplayValue.length >= 10)) {
                 mainDisplayValue += operandValue;
             } 
         }
+        populateDisplays(mainDisplayValue, auxDisplayValue);
+    });
+}
+
+let workDotButton = function (dotButton) {
+    dotButton.addEventListener('click', e => {
+        // operandValue = e.target.innerText;
+        // if (mainDisplayValue == "0") {
+        //     mainDisplayValue = ".";
+        //     populateDisplays(mainDisplayValue, auxDisplayValue);
+        // }
+        if (!mainDisplayValue.includes(".")) {
+            mainDisplayValue += "."; 
+        }
+        console.log(mainDisplayValue)
         populateDisplays(mainDisplayValue, auxDisplayValue);
     });
 }
@@ -122,7 +139,7 @@ let workEqualsButton = function (equalsButton) {
 let workCleanButton = function (cleanButton) {
     cleanButton.addEventListener('click', () => {
         // operandValue = e.target.innerText;
-        mainDisplayValue = "";
+        mainDisplayValue = "0";
         auxDisplayValue = "";
         inputValue = "";
         operatorValue = "";
@@ -153,6 +170,22 @@ let workPlusminusButton = function (plusminusButton) {
     });
 }
 
+let workPercentButton = function (percentButton) {
+    percentButton.addEventListener('click', (e) => {
+        if (auxDisplayValue == "") {
+            mainDisplayValue = operate("*", 0.01, mainDisplayValue);
+        } else {
+            mainDisplayValue = operate("*", auxDisplayValue.slice(0,-1)*0.01, mainDisplayValue)
+            console.log(mainDisplayValue)
+        }
+
+        // operandOne = "";
+        // operatorValue = "";     
+        // mainDisplayValue = "";       
+        populateDisplays(mainDisplayValue, auxDisplayValue);
+    });
+}
+
 // selecting buttons and adding respective listeners
 const operandButtons = document.querySelectorAll(".operand");
 const operatorButtons = document.querySelectorAll(".operator");
@@ -167,3 +200,5 @@ workEqualsButton(equalsButton);
 workCleanButton(clearButton);
 workDeleteButton(document.querySelector("#delete"));
 workPlusminusButton(document.querySelector("#plus-minus"));
+workDotButton(document.querySelector("#dot"));
+workPercentButton(document.querySelector("#percent"));
