@@ -18,30 +18,16 @@ let add = function (a, b) {
 }
 
 let subtract = function (a, b) {
-    // if (checkDecimals(a) > checkDecimals(b)) {
-    //     return (a - b).toFixed(checkDecimals(a));
-    // } else {
-    //     return (a - b).toFixed(checkDecimals(b));
-    // }   
     return (a - b).toFixed(14) * 1;
 }
 
 let multiply = function (a, b) {
-    // return (a * b).toFixed(15);
     return (a * b).toFixed(14) * 1;
 }
 
 let divide = function (a, b) {
     return (a / b).toFixed(14) * 1;
 }
-
-// let checkDecimals = function (num) {
-//     if (Number.isInteger(+num)) {
-//         return 0;
-//     } else {
-//         return num.toString().split('.')[1].length;
-//     }
-// }
 
 let operate = function (operator, operandOne, operandTwo) {
     switch (operator) {
@@ -51,7 +37,6 @@ let operate = function (operator, operandOne, operandTwo) {
             return subtract(operandOne, operandTwo);
         case "*":
             return multiply(operandOne, operandTwo);
-        // case "÷":
         case "/": 
             return divide(operandOne, operandTwo);
         default:
@@ -60,10 +45,6 @@ let operate = function (operator, operandOne, operandTwo) {
 }
 
 let populateDisplays = function (mainDisplayValue, auxDisplayValue) {
-    // if (mainDisplayValue.slice(0,1) == 0) {
-    //     mainDisplayValue = mainDisplayValue.slice(1,);
-    // }
-    console.log(String(mainDisplayValue).length);
     if (String(mainDisplayValue).length > 10) {
         // need to implement rounding if e has more than three digits
         mainDisplayValue = Number(mainDisplayValue).toExponential(5);
@@ -77,9 +58,7 @@ let workOperatorButton = function (operatorButton) {
         
         if (operandOne != "" && operatorValue != "" && mainDisplayValue != "") {
             operandOne = operate(operatorValue, operandOne, mainDisplayValue);
-            auxDisplayValue = operandOne + e.target.innerText;
-            // operandOne = "";
-            // operatorValue = "";     
+            auxDisplayValue = operandOne + e.target.innerText;   
             mainDisplayValue = "";       
             populateDisplays(mainDisplayValue, auxDisplayValue);
         }
@@ -90,7 +69,6 @@ let workOperatorButton = function (operatorButton) {
         } else {
             auxDisplayValue = auxDisplayValue.slice(0,-1) + operatorValue;
         }
-        // auxDisplayValue = mainDisplayValue + operatorValue;
         mainDisplayValue = "";
         populateDisplays(mainDisplayValue, auxDisplayValue);
     });
@@ -115,22 +93,15 @@ let workOperandButton = function (operandButton) {
 
 let workDotButton = function (dotButton) {
     dotButton.addEventListener('click', e => {
-        // operandValue = e.target.innerText;
-        // if (mainDisplayValue == "0") {
-        //     mainDisplayValue = ".";
-        //     populateDisplays(mainDisplayValue, auxDisplayValue);
-        // }
         if (!String(mainDisplayValue).includes(".")) {
             mainDisplayValue += "."; 
         }
-        console.log(mainDisplayValue)
         populateDisplays(mainDisplayValue, auxDisplayValue);
     });
 }
 
 let workEqualsButton = function (equalsButton) {
     equalsButton.addEventListener('click', e => {
-        // operandValue = e.target.innerText;
         if (operandOne != "" && operatorValue != "" && mainDisplayValue != "") {
             auxDisplayValue = operandOne + operatorValue + mainDisplayValue + "=";
             mainDisplayValue = operate(operatorValue, operandOne, mainDisplayValue);
@@ -143,7 +114,6 @@ let workEqualsButton = function (equalsButton) {
 
 let workCleanButton = function (cleanButton) {
     cleanButton.addEventListener('click', () => {
-        // operandValue = e.target.innerText;
         mainDisplayValue = "0";
         auxDisplayValue = "";
         inputValue = "";
@@ -156,9 +126,6 @@ let workCleanButton = function (cleanButton) {
 
 let workDeleteButton = function (deleteButton) {
     deleteButton.addEventListener('click', () => {
-
-        console.log(mainDisplayValue);
-
         mainDisplayValue = mainDisplayValue.toString().slice(0,-1);
         populateDisplays(mainDisplayValue, auxDisplayValue);
     });
@@ -177,16 +144,12 @@ let workPlusminusButton = function (plusminusButton) {
 
 let workPercentButton = function (percentButton) {
     percentButton.addEventListener('click', (e) => {
-        if (auxDisplayValue == "") {
+        if (auxDisplayValue == "" || auxDisplayValue.includes("=")) {
             mainDisplayValue = operate("*", 0.01, mainDisplayValue);
         } else {
             mainDisplayValue = operate("*", auxDisplayValue.slice(0,-1)*0.01, mainDisplayValue)
             console.log(mainDisplayValue)
         }
-
-        // operandOne = "";
-        // operatorValue = "";     
-        // mainDisplayValue = "";       
         populateDisplays(mainDisplayValue, auxDisplayValue);
     });
 }
@@ -194,15 +157,11 @@ let workPercentButton = function (percentButton) {
 // selecting buttons and adding respective listeners
 const operandButtons = document.querySelectorAll(".operand");
 const operatorButtons = document.querySelectorAll(".operator");
-const equalsButton = document.querySelector("#equals");
-const clearButton = document.querySelector("#clear");
-// const deleteButton = document.querySelector("#delete");
-
-
 operatorButtons.forEach(workOperatorButton);
 operandButtons.forEach(workOperandButton);
-workEqualsButton(equalsButton);
-workCleanButton(clearButton);
+
+workEqualsButton(document.querySelector("#equals"));
+workCleanButton(document.querySelector("#clear"));
 workDeleteButton(document.querySelector("#delete"));
 workPlusminusButton(document.querySelector("#plus-minus"));
 workDotButton(document.querySelector("#dot"));

@@ -1,7 +1,5 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 @font-face {font-family: DSEG14; src: url('../fonts/DSEG14Classic-Bold.ttf');}
-/* @font-face {font-family: DSEG7; src: url('../fonts/DSEG7Modern-Bold.ttf');} */
 
 body, button, a {
     font-family: 'Orbitron', 'Franklin Gothic Medium', 'Helvetica', 'Arial', sans-serif;
@@ -27,15 +25,8 @@ p {
     height: 30px;
     width: 315px;
     display: flex;
-    /* align-items: center; */
     justify-content: right;
     background-color: #1e1e2e;
-
-    /* text-shadow: 1px 1px 0px rgba(227, 224, 224, 0.2); */
-
-    /* gap: 4px; */
-    /* flex-wrap: wrap-reverse; */
-
     box-shadow:
     inset 1px 1px 7px 0px #050505,
     0px 0px 4px 2px #000,
@@ -45,7 +36,6 @@ p {
 .name {
     font-size: 18px;
     font-weight: bold;
-    /* font-family: Orbitron; */
     display: flex;
     align-items: end;
     height: 30px;
@@ -56,9 +46,6 @@ p {
     font-family: 'DSEG14';
     background-color: #7d8c73;
     color: #11111b;
-
-    /* background-color: #313244; */
-    /* overflow: hidden; */
     box-shadow:
         inset 1px 1px 7px 0px #050505,
         0px 0px 4px 2px #000,
@@ -67,23 +54,13 @@ p {
 
 #aux-display {
     display: flex;
-    /* margin-top: 50px; */
     padding: 10px 5px;
     height: 26px;
     width: 315px;
     text-shadow: 2px 1px 0px rgba(0,0,0,.2);
-    /* font-family: 'DSEG7 Modern'; */
-    /* font-family: 'DSEG14 Classic'; */
-    /* font-family: 'Orbitron'; */
-    /* font-size: 14px; */
     font-size: 17px;
-    /* font-weight: 100; */
-    /* font-weight: 400; */
     align-items:flex-end;
     justify-content: right;
-    /* background-color: #37384a;
-    color: #cdd6f4; */
-    /* overflow: hidden; */
 }
 
 #main-display {
@@ -93,17 +70,9 @@ p {
     height: 50px;
     width: 315px;
     text-shadow: 3px 2px 0px rgba(0,0,0,.2);
-    /* font-family: 'DSEG7'; */
-    /* font-family: 'DSEG7 Modern'; */
-    /* font-family: 'DSEG14 Classic'; */
-    /* font-family: 'Orbitron'; */
-    /* font-size: 27px; */
     font-size: 35px;
-    /* font-weight: 800; */
-    /* font-weight: bold; */
     align-items:flex-end;
     justify-content: right;
-
 }
 
 button {
@@ -114,27 +83,22 @@ button {
     width: 75px;
     font-size: 22px;
     font-weight: 600;
-    /* background-color: #1e1e2e; */
     background-color: #1e1e2e;
-    /* color: #a6adc8; */
     border-width: 1px;
     border-radius: 5px;
     border-color: #6c7086;
 }
 
 #calculator {
-    /* margin-bottom: 50px; */
     padding: 5px;
     height: 290px;
     width: 315px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background-color: #313244; */
     background-color: #313244;
     gap: 5px;
     flex-wrap: wrap-reverse;
-
     box-shadow:
     inset 1px 1px 7px 0px #050505,
     0px 0px 4px 2px #000,
@@ -143,11 +107,8 @@ button {
 
 .inner {
     display: flex;
-    /* border: 1px solid blue; */
     justify-content: right;
-    /* align-items:flex-end; */
     overflow: hidden;
-    /* text-overflow: ellipsis; */
 }
 
 .operator, #equals, #plus-minus, #percent {
