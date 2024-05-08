@@ -1,8 +1,10 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 @font-face {font-family: DSEG14; src: url('../fonts/DSEG14Classic-Bold.ttf');}
 /* @font-face {font-family: DSEG7; src: url('../fonts/DSEG7Modern-Bold.ttf');} */
 
 body, button {
-    font-family: 'Inter', 'Franklin Gothic Medium', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Orbitron', 'Franklin Gothic Medium', 'Helvetica', 'Arial', sans-serif;
     background-color: #1e1e2e;
 }
 
@@ -17,39 +19,38 @@ p {
     margin: 0;
 }
 
-button {
-    display: flex;
-    align-items:flex-end;
-    justify-content: right;
-    height: 54px;
-    width: 75px;
-    font-size: 22px;
-    font-weight: 600;
-    background-color: #1e1e2e;
-    color: #9399b2;
-    border-width: 1px;
-    border-radius: 5px;
-}
+
 
 #top {
     margin-top: 50px;
-    padding: 4px;
-    height: 24px;
-    width: 236px;
+    margin-bottom: 5px;
+    padding: 5px;
+    height: 30px;
+    width: 315px;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: right;
-    background-color: #313244;
+    background-color: #1e1e2e;
     color: #9399b2;
-    text-shadow: 1px 1px 0px rgba(227, 224, 224, 0.2);
-    font-weight: 600;
-    gap: 4px;
-    flex-wrap: wrap-reverse;
+    /* text-shadow: 1px 1px 0px rgba(227, 224, 224, 0.2); */
+
+    /* gap: 4px; */
+    /* flex-wrap: wrap-reverse; */
 
     box-shadow:
     inset 1px 1px 7px 0px #050505,
     0px 0px 4px 2px #000,
     0px 0px 4px 2px #777;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: bold;
+    /* font-family: Orbitron; */
+    display: flex;
+    align-items: end;
+    height: 30px;
+    padding: 0;
 }
 
 .display {
@@ -68,15 +69,15 @@ button {
 #aux-display {
     display: flex;
     /* margin-top: 50px; */
-    padding: 10px 4px;
+    padding: 10px 5px;
     height: 26px;
-    width: 236px;
+    width: 315px;
     text-shadow: 2px 1px 0px rgba(0,0,0,.2);
     /* font-family: 'DSEG7 Modern'; */
     /* font-family: 'DSEG14 Classic'; */
     /* font-family: 'Orbitron'; */
     /* font-size: 14px; */
-    font-size: 12px;
+    font-size: 17px;
     /* font-weight: 100; */
     /* font-weight: 400; */
     align-items:flex-end;
@@ -106,6 +107,21 @@ button {
 
 }
 
+button {
+    display: flex;
+    align-items:flex-end;
+    justify-content: right;
+    height: 54px;
+    width: 75px;
+    font-size: 22px;
+    font-weight: 600;
+    /* background-color: #1e1e2e; */
+    background-color: #1e1e2e;
+    color: #9399b2;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
 #calculator {
     margin-bottom: 50px;
     padding: 5px;
@@ -114,6 +130,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* background-color: #313244; */
     background-color: #313244;
     gap: 5px;
     flex-wrap: wrap-reverse;
