@@ -45,6 +45,7 @@ p {
     font-weight: bold;
     display: flex;
     align-items: end;
+    letter-spacing: 0.04em;
     height: 30px;
     padding: 0;
 }
@@ -136,4 +137,5 @@ footer {
     font-size: 8px;
     color: #a6e3a1;
     text-align: center;
+    letter-spacing: 0.05em;
 }
