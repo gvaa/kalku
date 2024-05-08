@@ -63,6 +63,10 @@ let populateDisplays = function (mainDisplayValue, auxDisplayValue) {
     // if (mainDisplayValue.slice(0,1) == 0) {
     //     mainDisplayValue = mainDisplayValue.slice(1,);
     // }
+    console.log(String(mainDisplayValue).length);
+    if (String(mainDisplayValue).length > 10) {
+        mainDisplayValue = mainDisplayValue.toExponential(5);
+    }
     mainDisplay.innerHTML = `<p class="inner">${mainDisplayValue}</p>`;
     auxDisplay.innerHTML = `<p class="inner">${auxDisplayValue}</p>`;
 }
