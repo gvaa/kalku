@@ -66,7 +66,7 @@ p {
     padding: 10px 5px;
     height: 22px;
     width: 315px;
-    font-size: 16.9px;
+    font-size: 16.8px;
     align-items:flex-end;
     justify-content: right;
 }
@@ -118,6 +118,13 @@ button {
     justify-content: right;
     overflow: hidden;
     text-shadow: 2px 1px 0px rgba(0,0,0,.2);
+}
+
+.inner-aux {
+    display: flex;
+    justify-content: right;
+    overflow: hidden;
+    text-shadow: 1px 1px 0px rgba(0,0,0,.2);
 }
 
 .inner-back {
